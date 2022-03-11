@@ -30,73 +30,165 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelAcronimo = new javax.swing.JLabel();
-        txtAcronimo = new javax.swing.JTextField();
-        labelNombre = new javax.swing.JLabel();
-        txtNombre = new javax.swing.JTextField();
+        background = new javax.swing.JPanel();
+        panelFormulario = new javax.swing.JPanel();
+        lblAcronimo = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         btnJugar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
+        btmSalir = new javax.swing.JButton();
+        txtAcronimo = new javax.swing.JTextField();
+        txtNombre = new javax.swing.JTextField();
+        Developer2 = new javax.swing.JLabel();
+        nombreJuego = new javax.swing.JLabel();
+        desarrolladoPor = new javax.swing.JLabel();
+        Developer1 = new javax.swing.JLabel();
+        iconJava = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelAcronimo.setText("Acronimo: ");
+        background.setBackground(new java.awt.Color(106, 126, 252));
+        background.setPreferredSize(new java.awt.Dimension(1080, 720));
+        background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelNombre.setText("Nombre: ");
+        panelFormulario.setBackground(new java.awt.Color(255, 255, 255));
 
-        btnJugar.setText("A Jugar");
+        lblAcronimo.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        lblAcronimo.setForeground(new java.awt.Color(106, 126, 252));
+        lblAcronimo.setText("Acronimo");
+        lblAcronimo.setToolTipText("");
+        lblAcronimo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lblAcronimo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        lblNombre.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(106, 126, 252));
+        lblNombre.setText("Name Player");
+
+        btnJugar.setBackground(new java.awt.Color(51, 255, 0));
+        btnJugar.setForeground(new java.awt.Color(51, 255, 51));
+        btnJugar.setText("A Jugar :)");
         btnJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnJugarActionPerformed(evt);
             }
         });
 
-        btnSalir.setText("Salir");
-        btnSalir.addActionListener(new java.awt.event.ActionListener() {
+        btmSalir.setBackground(new java.awt.Color(255, 86, 86));
+        btmSalir.setForeground(new java.awt.Color(255, 86, 86));
+        btmSalir.setText("Salir");
+        btmSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirActionPerformed(evt);
+                btmSalirActionPerformed(evt);
             }
         });
+
+        txtAcronimo.setBackground(new java.awt.Color(255, 255, 255));
+        txtAcronimo.setForeground(new java.awt.Color(102, 102, 102));
+        txtAcronimo.setText("ABC");
+        txtAcronimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAcronimoActionPerformed(evt);
+            }
+        });
+
+        txtNombre.setBackground(new java.awt.Color(255, 255, 255));
+        txtNombre.setForeground(new java.awt.Color(102, 102, 102));
+        txtNombre.setText("Nick Name");
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelFormularioLayout = new javax.swing.GroupLayout(panelFormulario);
+        panelFormulario.setLayout(panelFormularioLayout);
+        panelFormularioLayout.setHorizontalGroup(
+            panelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelFormularioLayout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(panelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtAcronimo)
+                    .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFormularioLayout.createSequentialGroup()
+                .addGap(40, 53, Short.MAX_VALUE)
+                .addGroup(panelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFormularioLayout.createSequentialGroup()
+                        .addComponent(lblAcronimo)
+                        .addGap(84, 84, 84))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelFormularioLayout.createSequentialGroup()
+                        .addComponent(lblNombre)
+                        .addGap(69, 69, 69))))
+            .addGroup(panelFormularioLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(btmSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnJugar, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
+        );
+        panelFormularioLayout.setVerticalGroup(
+            panelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelFormularioLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(lblAcronimo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(txtAcronimo, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblNombre)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(panelFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btmSalir)
+                    .addComponent(btnJugar))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
+
+        background.add(panelFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 340, 280));
+
+        Developer2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Developer2.setForeground(new java.awt.Color(255, 255, 255));
+        Developer2.setText("- Nicolas Olmos (@Redooz)");
+        Developer2.setToolTipText("");
+        Developer2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Developer2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        background.add(Developer2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 380, 320, 50));
+
+        nombreJuego.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        nombreJuego.setForeground(new java.awt.Color(255, 255, 255));
+        nombreJuego.setText("Memory Game");
+        nombreJuego.setToolTipText("");
+        nombreJuego.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nombreJuego.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        background.add(nombreJuego, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, -1, 33));
+
+        desarrolladoPor.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        desarrolladoPor.setForeground(new java.awt.Color(255, 255, 255));
+        desarrolladoPor.setText("Developed by:");
+        desarrolladoPor.setToolTipText("");
+        desarrolladoPor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        desarrolladoPor.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        background.add(desarrolladoPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, 280, 50));
+
+        Developer1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        Developer1.setForeground(new java.awt.Color(255, 255, 255));
+        Developer1.setText("- Daniel Garcia Romero (@SnakyDH)");
+        Developer1.setToolTipText("");
+        Developer1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Developer1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        background.add(Developer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 320, 50));
+
+        iconJava.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/java.png"))); // NOI18N
+        background.add(iconJava, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 100, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(223, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnJugar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnSalir)
-                        .addGap(49, 49, 49))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(labelNombre)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtNombre)
-                            .addGap(36, 36, 36))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(labelAcronimo)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtAcronimo, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(38, 38, 38)))))
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelAcronimo)
-                    .addComponent(txtAcronimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelNombre)
-                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnJugar)
-                    .addComponent(btnSalir))
-                .addGap(59, 59, 59))
+            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
         );
 
         pack();
@@ -116,10 +208,18 @@ public class Login extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_btnJugarActionPerformed
 
-    private void btnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirActionPerformed
-        setVisible(false); 
+    private void btmSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btmSalirActionPerformed
+        setVisible(false);
         System.exit(0);
-    }//GEN-LAST:event_btnSalirActionPerformed
+    }//GEN-LAST:event_btmSalirActionPerformed
+
+    private void txtAcronimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAcronimoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAcronimoActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,10 +258,17 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Developer1;
+    private javax.swing.JLabel Developer2;
+    private javax.swing.JPanel background;
+    private javax.swing.JButton btmSalir;
     private javax.swing.JButton btnJugar;
-    private javax.swing.JButton btnSalir;
-    private javax.swing.JLabel labelAcronimo;
-    private javax.swing.JLabel labelNombre;
+    private javax.swing.JLabel desarrolladoPor;
+    private javax.swing.JLabel iconJava;
+    private javax.swing.JLabel lblAcronimo;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel nombreJuego;
+    private javax.swing.JPanel panelFormulario;
     private javax.swing.JTextField txtAcronimo;
     private javax.swing.JTextField txtNombre;
     // End of variables declaration//GEN-END:variables
