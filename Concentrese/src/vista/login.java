@@ -64,7 +64,6 @@ public class Login extends javax.swing.JFrame {
         lblNombre.setText("Name Player");
 
         btnJugar.setBackground(new java.awt.Color(51, 255, 0));
-        btnJugar.setForeground(new java.awt.Color(51, 255, 51));
         btnJugar.setText("A Jugar :)");
         btnJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +72,6 @@ public class Login extends javax.swing.JFrame {
         });
 
         btmSalir.setBackground(new java.awt.Color(255, 86, 86));
-        btmSalir.setForeground(new java.awt.Color(255, 86, 86));
         btmSalir.setText("Salir");
         btmSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,7 +79,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        txtAcronimo.setBackground(new java.awt.Color(255, 255, 255));
         txtAcronimo.setForeground(new java.awt.Color(102, 102, 102));
         txtAcronimo.setText("ABC");
         txtAcronimo.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +87,6 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
-        txtNombre.setBackground(new java.awt.Color(255, 255, 255));
         txtNombre.setForeground(new java.awt.Color(102, 102, 102));
         txtNombre.setText("Nick Name");
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
