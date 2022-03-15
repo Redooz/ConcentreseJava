@@ -13,7 +13,6 @@ import modelo.Archivo;
  * @author SnakyDH
  */
 public class Login extends javax.swing.JFrame {
-
     /**
      * Creates new form login
      */
@@ -45,6 +44,8 @@ public class Login extends javax.swing.JFrame {
         iconJava = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setResizable(false);
 
         background.setBackground(new java.awt.Color(106, 126, 252));
         background.setPreferredSize(new java.awt.Dimension(1080, 720));
@@ -242,6 +243,8 @@ public class Login extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
