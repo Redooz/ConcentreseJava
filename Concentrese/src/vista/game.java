@@ -27,18 +27,135 @@ public class Game extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        backgroundGame = new javax.swing.JPanel();
+        lblHighScore = new javax.swing.JLabel();
+        lblName = new javax.swing.JLabel();
+        panelMatriz = new javax.swing.JPanel();
+        java1 = new javax.swing.JLabel();
+        java2 = new javax.swing.JLabel();
+        js1 = new javax.swing.JLabel();
+        js2 = new javax.swing.JLabel();
+        cpp1 = new javax.swing.JLabel();
+        py1 = new javax.swing.JLabel();
+        c1 = new javax.swing.JLabel();
+        cs1 = new javax.swing.JLabel();
+        bash1 = new javax.swing.JLabel();
+        sql1 = new javax.swing.JLabel();
+        perl1 = new javax.swing.JLabel();
+        swift1 = new javax.swing.JLabel();
+        kt1 = new javax.swing.JLabel();
+        php1 = new javax.swing.JLabel();
+        r1 = new javax.swing.JLabel();
+        ru1 = new javax.swing.JLabel();
+        rs1 = new javax.swing.JLabel();
+        scala1 = new javax.swing.JLabel();
+        ts1 = new javax.swing.JLabel();
+        go1 = new javax.swing.JLabel();
+        iconBG = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(900, 590));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        backgroundGame.setBackground(new java.awt.Color(29, 36, 44));
+        backgroundGame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblHighScore.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblHighScore.setText("High Score:");
+        lblHighScore.setPreferredSize(new java.awt.Dimension(100, 20));
+        backgroundGame.add(lblHighScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 110, 50));
+
+        lblName.setBackground(new java.awt.Color(255, 255, 255));
+        lblName.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblName.setText("Name:");
+        lblName.setMaximumSize(new java.awt.Dimension(3, 16));
+        lblName.setPreferredSize(new java.awt.Dimension(58, 20));
+        backgroundGame.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 80, 60));
+
+        panelMatriz.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        java1.setForeground(new java.awt.Color(255, 255, 255));
+        java1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/java.png"))); // NOI18N
+        panelMatriz.add(java1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, -1, -1));
+
+        java2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/java.png"))); // NOI18N
+        panelMatriz.add(java2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        js1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/javascript.png"))); // NOI18N
+        panelMatriz.add(js1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+
+        js2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/javascript.png"))); // NOI18N
+        panelMatriz.add(js2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+
+        cpp1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/cpp.png"))); // NOI18N
+        panelMatriz.add(cpp1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 250, 100, 100));
+
+        py1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/python.png"))); // NOI18N
+        panelMatriz.add(py1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, -1, -1));
+
+        c1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/c.png"))); // NOI18N
+        panelMatriz.add(c1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 100, 110));
+
+        cs1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/c#.png"))); // NOI18N
+        panelMatriz.add(cs1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, -1, -1));
+
+        bash1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/bash.png"))); // NOI18N
+        panelMatriz.add(bash1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, -1, -1));
+
+        sql1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/sql.png"))); // NOI18N
+        panelMatriz.add(sql1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+
+        perl1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/perl.png"))); // NOI18N
+        panelMatriz.add(perl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 350, 110, 110));
+
+        swift1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/swift.png"))); // NOI18N
+        panelMatriz.add(swift1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 350, 110, 100));
+
+        kt1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/kotlin.png"))); // NOI18N
+        panelMatriz.add(kt1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, -1, -1));
+
+        php1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/php.png"))); // NOI18N
+        panelMatriz.add(php1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
+
+        r1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/r.png"))); // NOI18N
+        panelMatriz.add(r1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
+
+        ru1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/ruby.png"))); // NOI18N
+        panelMatriz.add(ru1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 140, -1, -1));
+
+        rs1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/rust.png"))); // NOI18N
+        panelMatriz.add(rs1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
+
+        scala1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/scala.png"))); // NOI18N
+        panelMatriz.add(scala1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, -1));
+
+        ts1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/typescript.png"))); // NOI18N
+        panelMatriz.add(ts1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 250, -1, -1));
+
+        go1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/golang.png"))); // NOI18N
+        panelMatriz.add(go1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+
+        backgroundGame.add(panelMatriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 660, 470));
+
+        iconBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/backgroundGame.png"))); // NOI18N
+        backgroundGame.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, 480));
+
+        getContentPane().add(backgroundGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 900, 600));
+
+        jMenu1.setText("Scores");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Help");
+        jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("About Us");
+        jMenuBar1.add(jMenu3);
+
+        setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -82,5 +199,34 @@ public class Game extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel backgroundGame;
+    private javax.swing.JLabel bash1;
+    private javax.swing.JLabel c1;
+    private javax.swing.JLabel cpp1;
+    private javax.swing.JLabel cs1;
+    private javax.swing.JLabel go1;
+    private javax.swing.JLabel iconBG;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel java1;
+    private javax.swing.JLabel java2;
+    private javax.swing.JLabel js1;
+    private javax.swing.JLabel js2;
+    private javax.swing.JLabel kt1;
+    private javax.swing.JLabel lblHighScore;
+    private javax.swing.JLabel lblName;
+    private javax.swing.JPanel panelMatriz;
+    private javax.swing.JLabel perl1;
+    private javax.swing.JLabel php1;
+    private javax.swing.JLabel py1;
+    private javax.swing.JLabel r1;
+    private javax.swing.JLabel rs1;
+    private javax.swing.JLabel ru1;
+    private javax.swing.JLabel scala1;
+    private javax.swing.JLabel sql1;
+    private javax.swing.JLabel swift1;
+    private javax.swing.JLabel ts1;
     // End of variables declaration//GEN-END:variables
 }
