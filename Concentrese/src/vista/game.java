@@ -77,6 +77,7 @@ public class Game extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 590));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backgroundGame.setBackground(new java.awt.Color(29, 36, 44));
@@ -526,11 +527,11 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_ru2MouseClicked
 
     private void rs1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rs1MouseClicked
-        rs1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/rust.png")));
+        rs1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/rusty.png")));
     }//GEN-LAST:event_rs1MouseClicked
 
     private void rs2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rs2MouseClicked
-        rs2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/rust.png")));
+        rs2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/rusty.png")));
     }//GEN-LAST:event_rs2MouseClicked
 
     private void scala1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scala1MouseClicked
