@@ -55,7 +55,7 @@ public class Login extends javax.swing.JFrame {
 
         lblAcronimo.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         lblAcronimo.setForeground(new java.awt.Color(106, 126, 252));
-        lblAcronimo.setText("Acronimo");
+        lblAcronimo.setText("Short Name");
         lblAcronimo.setToolTipText("");
         lblAcronimo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblAcronimo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -65,7 +65,7 @@ public class Login extends javax.swing.JFrame {
         lblNombre.setText("Name Player");
 
         btnJugar.setBackground(new java.awt.Color(51, 255, 0));
-        btnJugar.setText("A Jugar :)");
+        btnJugar.setText("Play :)");
         btnJugar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnJugarActionPerformed(evt);
@@ -73,7 +73,7 @@ public class Login extends javax.swing.JFrame {
         });
 
         btmSalir.setBackground(new java.awt.Color(255, 86, 86));
-        btmSalir.setText("Salir");
+        btmSalir.setText("Exit");
         btmSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmSalirActionPerformed(evt);

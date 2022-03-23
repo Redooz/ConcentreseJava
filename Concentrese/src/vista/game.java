@@ -65,13 +65,13 @@ public class Game extends javax.swing.JFrame {
         backgroundGame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHighScore.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblHighScore.setText("High Score:");
+        lblHighScore.setText("Your Score:");
         lblHighScore.setPreferredSize(new java.awt.Dimension(100, 20));
         backgroundGame.add(lblHighScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 110, 50));
 
         lblName.setBackground(new java.awt.Color(255, 255, 255));
         lblName.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        lblName.setText("Name:");
+        lblName.setText("Your name:");
         lblName.setMaximumSize(new java.awt.Dimension(3, 16));
         lblName.setPreferredSize(new java.awt.Dimension(58, 20));
         backgroundGame.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 80, 60));
