@@ -76,24 +76,27 @@ public class Game extends javax.swing.JFrame {
         AboutMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(900, 590));
+        setMinimumSize(new java.awt.Dimension(900, 590));
         setPreferredSize(new java.awt.Dimension(900, 590));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         backgroundGame.setBackground(new java.awt.Color(29, 36, 44));
+        backgroundGame.setMaximumSize(new java.awt.Dimension(900, 590));
         backgroundGame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHighScore.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblHighScore.setText("Your Score:");
         lblHighScore.setPreferredSize(new java.awt.Dimension(100, 20));
-        backgroundGame.add(lblHighScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, 110, 50));
+        backgroundGame.add(lblHighScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 110, 50));
 
         lblName.setBackground(new java.awt.Color(255, 255, 255));
         lblName.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblName.setText("Your name:");
         lblName.setMaximumSize(new java.awt.Dimension(3, 16));
         lblName.setPreferredSize(new java.awt.Dimension(58, 20));
-        backgroundGame.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, 120, 60));
+        backgroundGame.add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 20, 120, 60));
 
         panelMatriz.setBackground(new java.awt.Color(75, 58, 108));
         panelMatriz.setLayout(new java.awt.GridLayout(6, 6));
@@ -387,18 +390,18 @@ public class Game extends javax.swing.JFrame {
         });
         panelMatriz.add(go2);
 
-        backgroundGame.add(panelMatriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 480, 480));
+        backgroundGame.add(panelMatriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 480, 480));
 
         iconBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/backgroundGame.png"))); // NOI18N
-        backgroundGame.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, 480));
+        backgroundGame.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 490));
 
         jLabel1.setText("10000");
-        backgroundGame.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 50, -1));
+        backgroundGame.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 50, -1));
 
         jLabel2.setText("SnakyDH");
-        backgroundGame.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, -1, 20));
+        backgroundGame.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, 20));
 
-        getContentPane().add(backgroundGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 900, 600));
+        getContentPane().add(backgroundGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 900, 590));
 
         ScoresMenu.setText("Scores");
         MenuBar.add(ScoresMenu);
