@@ -70,10 +70,10 @@ public class Game extends javax.swing.JFrame {
         iconBG = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        MenuBar = new javax.swing.JMenuBar();
+        ScoresMenu = new javax.swing.JMenu();
+        HelpMenu = new javax.swing.JMenu();
+        AboutMenu = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(900, 590));
@@ -400,16 +400,16 @@ public class Game extends javax.swing.JFrame {
 
         getContentPane().add(backgroundGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 900, 600));
 
-        jMenu1.setText("Scores");
-        jMenuBar1.add(jMenu1);
+        ScoresMenu.setText("Scores");
+        MenuBar.add(ScoresMenu);
 
-        jMenu2.setText("Help");
-        jMenuBar1.add(jMenu2);
+        HelpMenu.setText("Help");
+        MenuBar.add(HelpMenu);
 
-        jMenu3.setText("About Us");
-        jMenuBar1.add(jMenu3);
+        AboutMenu.setText("About Us");
+        MenuBar.add(AboutMenu);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MenuBar);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -599,6 +599,10 @@ public class Game extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu AboutMenu;
+    private javax.swing.JMenu HelpMenu;
+    private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JMenu ScoresMenu;
     private javax.swing.JPanel backgroundGame;
     private javax.swing.JLabel bash1;
     private javax.swing.JLabel bash2;
@@ -613,10 +617,6 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel iconBG;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel java1;
     private javax.swing.JLabel java2;
     private javax.swing.JLabel js1;
