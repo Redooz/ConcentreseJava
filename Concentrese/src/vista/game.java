@@ -1,7 +1,5 @@
 package vista;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -20,6 +18,8 @@ public class Game extends javax.swing.JFrame {
     JLabel[] images = new JLabel[36];
     int numeroImagenes[] = new int[36];
     int controlRepeticiones[] = new int[18];
+    int controlParejas[] = new int[36];
+    int clickCounter[] = new int[36];
     int click = 0, clickedImg1 = 0,clickedImg2 = 0;
     int score = 0;
     /**
@@ -85,7 +85,7 @@ public class Game extends javax.swing.JFrame {
         btnReset = new javax.swing.JButton();
         iconBG = new javax.swing.JLabel();
         jLabelScore = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelName = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         ScoresMenu = new javax.swing.JMenu();
         HelpMenu = new javax.swing.JMenu();
@@ -532,9 +532,9 @@ public class Game extends javax.swing.JFrame {
         jLabelScore.setForeground(new java.awt.Color(255, 255, 255));
         backgroundGame.add(jLabelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 36, 50, 20));
 
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("SnakyDH");
-        backgroundGame.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, 20));
+        jLabelName.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelName.setText("SnakyDH");
+        backgroundGame.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 60, 20));
 
         getContentPane().add(backgroundGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 900, 590));
 
@@ -560,6 +560,13 @@ public class Game extends javax.swing.JFrame {
                 images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
             }
         }
+        
+        score = 0;
+        jLabelScore.setText(score+"");
+        
+        click = 0;
+        clickedImg1 = 0;
+        clickedImg2 = 0;
     }//GEN-LAST:event_btnResetMouseClicked
 
     private void java1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_java1MouseClicked
@@ -909,7 +916,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel go1;
     private javax.swing.JLabel go2;
     private javax.swing.JLabel iconBG;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelName;
     private javax.swing.JLabel jLabelScore;
     private javax.swing.JLabel java1;
     private javax.swing.JLabel java2;
@@ -949,7 +956,9 @@ public class Game extends javax.swing.JFrame {
         initImages();
         initArrays(numeroImagenes); 
         initArrays(controlRepeticiones);
-                
+        initArrays(controlParejas);
+        initArrays(clickCounter);
+        
         for (int i = 0; i < numeroImagenes.length; i++) {
             imagePosition = nRandom.nextInt(18);
             
@@ -972,17 +981,23 @@ public class Game extends javax.swing.JFrame {
 
     private void flipImage(java.awt.event.MouseEvent evt){
         for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                click++;
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
+            if(evt.getSource() == images[i] && checkFoundPairs(i)){
+                
+                clickCounter[i]++;
+                
+                if(clickCounter[i] < 2){
+                    click++;
+                    images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
             
-                if (click == 1) {
-                    clickedImg1 = i;
-                    System.out.println("Click 1: " + clickedImg1);
-                } else if (click == 2){
-                    clickedImg2 = i;
-                    System.out.println("Click 2: " + clickedImg2);
+                    if (click == 1) {
+                        clickedImg1 = i;
+                        System.out.println("Click 1: " + clickedImg1);
+                    } else if (click == 2){
+                        clickedImg2 = i;
+                        System.out.println("Click 2: " + clickedImg2);
+                    }
                 }
+                
             }
         }
     }
@@ -993,10 +1008,14 @@ public class Game extends javax.swing.JFrame {
                 if (click == 2) {
                     if (numeroImagenes[clickedImg1] == numeroImagenes[clickedImg2]) {
                         score += 100;
+                        controlParejas[clickedImg1] = 1;
+                        controlParejas[clickedImg2] = 1;
                     } else {
                         images[clickedImg1].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
                         images[clickedImg2].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
                         score -= 50;
+                        clickCounter[clickedImg1] = 0;
+                        clickCounter[clickedImg2] = 0;
                     }
                     click = 0;
                 }
@@ -1042,6 +1061,14 @@ public class Game extends javax.swing.JFrame {
         images[33] = ts2; 
         images[34] = go1; 
         images[35] = go2;
+    }
+
+    private boolean checkFoundPairs(int i) {
+        if (controlParejas[i] != 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
