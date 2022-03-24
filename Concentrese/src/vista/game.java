@@ -21,7 +21,7 @@ public class Game extends javax.swing.JFrame {
     int numeroImagenes[] = new int[36];
     int controlRepeticiones[] = new int[18];
     int click = 0, clickedImg1 = 0,clickedImg2 = 0;
-    
+    int score = 0;
     /**
      * Creates new form game
      */
@@ -84,7 +84,7 @@ public class Game extends javax.swing.JFrame {
         go2 = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
         iconBG = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabelScore = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         ScoresMenu = new javax.swing.JMenu();
@@ -103,12 +103,14 @@ public class Game extends javax.swing.JFrame {
         backgroundGame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHighScore.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblHighScore.setForeground(new java.awt.Color(255, 255, 255));
         lblHighScore.setText("Your Score:");
         lblHighScore.setPreferredSize(new java.awt.Dimension(100, 20));
         backgroundGame.add(lblHighScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 110, 50));
 
         lblName.setBackground(new java.awt.Color(255, 255, 255));
         lblName.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Your name:");
         lblName.setMaximumSize(new java.awt.Dimension(3, 16));
         lblName.setPreferredSize(new java.awt.Dimension(58, 20));
@@ -527,9 +529,10 @@ public class Game extends javax.swing.JFrame {
         iconBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/backgroundGame.png"))); // NOI18N
         backgroundGame.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 490));
 
-        jLabel1.setText("10000");
-        backgroundGame.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 50, -1));
+        jLabelScore.setForeground(new java.awt.Color(255, 255, 255));
+        backgroundGame.add(jLabelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 36, 50, 20));
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("SnakyDH");
         backgroundGame.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, 20));
 
@@ -906,8 +909,8 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel go1;
     private javax.swing.JLabel go2;
     private javax.swing.JLabel iconBG;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelScore;
     private javax.swing.JLabel java1;
     private javax.swing.JLabel java2;
     private javax.swing.JLabel js1;
@@ -989,15 +992,17 @@ public class Game extends javax.swing.JFrame {
             if(evt.getSource() == images[i]){
                 if (click == 2) {
                     if (numeroImagenes[clickedImg1] == numeroImagenes[clickedImg2]) {
+                        score += 100;
                     } else {
                         images[clickedImg1].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
                         images[clickedImg2].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
+                        score -= 50;
                     }
                     click = 0;
                 }
             }
         }
-        
+        jLabelScore.setText(score+"");
     }
     
     private void initImages() {
