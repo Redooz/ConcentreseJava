@@ -1,7 +1,5 @@
 package vista;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -20,7 +18,10 @@ public class Game extends javax.swing.JFrame {
     JLabel[] images = new JLabel[36];
     int numeroImagenes[] = new int[36];
     int controlRepeticiones[] = new int[18];
-     
+    int controlParejas[] = new int[36];
+    int clickCounter[] = new int[36];
+    int click = 0, clickedImg1 = 0,clickedImg2 = 0;
+    int score = 0;
     /**
      * Creates new form game
      */
@@ -83,8 +84,8 @@ public class Game extends javax.swing.JFrame {
         go2 = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
         iconBG = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelScore = new javax.swing.JLabel();
+        jLabelName = new javax.swing.JLabel();
         MenuBar = new javax.swing.JMenuBar();
         ScoresMenu = new javax.swing.JMenu();
         HelpMenu = new javax.swing.JMenu();
@@ -102,12 +103,14 @@ public class Game extends javax.swing.JFrame {
         backgroundGame.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHighScore.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblHighScore.setForeground(new java.awt.Color(255, 255, 255));
         lblHighScore.setText("Your Score:");
         lblHighScore.setPreferredSize(new java.awt.Dimension(100, 20));
         backgroundGame.add(lblHighScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 110, 50));
 
         lblName.setBackground(new java.awt.Color(255, 255, 255));
         lblName.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        lblName.setForeground(new java.awt.Color(255, 255, 255));
         lblName.setText("Your name:");
         lblName.setMaximumSize(new java.awt.Dimension(3, 16));
         lblName.setPreferredSize(new java.awt.Dimension(58, 20));
@@ -122,6 +125,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 java1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                java1MouseExited(evt);
+            }
         });
         panelMatriz.add(java1);
 
@@ -129,6 +135,9 @@ public class Game extends javax.swing.JFrame {
         java2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 java2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                java2MouseExited(evt);
             }
         });
         panelMatriz.add(java2);
@@ -138,6 +147,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 js1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                js1MouseExited(evt);
+            }
         });
         panelMatriz.add(js1);
 
@@ -145,6 +157,9 @@ public class Game extends javax.swing.JFrame {
         js2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 js2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                js2MouseExited(evt);
             }
         });
         panelMatriz.add(js2);
@@ -154,6 +169,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 c1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                c1MouseExited(evt);
+            }
         });
         panelMatriz.add(c1);
 
@@ -161,6 +179,9 @@ public class Game extends javax.swing.JFrame {
         c2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 c2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                c2MouseExited(evt);
             }
         });
         panelMatriz.add(c2);
@@ -170,6 +191,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cpp1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cpp1MouseExited(evt);
+            }
         });
         panelMatriz.add(cpp1);
 
@@ -177,6 +201,9 @@ public class Game extends javax.swing.JFrame {
         cpp2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cpp2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cpp2MouseExited(evt);
             }
         });
         panelMatriz.add(cpp2);
@@ -186,6 +213,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 py1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                py1MouseExited(evt);
+            }
         });
         panelMatriz.add(py1);
 
@@ -193,6 +223,9 @@ public class Game extends javax.swing.JFrame {
         py2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 py2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                py2MouseExited(evt);
             }
         });
         panelMatriz.add(py2);
@@ -202,6 +235,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cs1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cs1MouseExited(evt);
+            }
         });
         panelMatriz.add(cs1);
 
@@ -209,6 +245,9 @@ public class Game extends javax.swing.JFrame {
         cs2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cs2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cs2MouseExited(evt);
             }
         });
         panelMatriz.add(cs2);
@@ -218,6 +257,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bash1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bash1MouseExited(evt);
+            }
         });
         panelMatriz.add(bash1);
 
@@ -225,6 +267,9 @@ public class Game extends javax.swing.JFrame {
         bash2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 bash2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bash2MouseExited(evt);
             }
         });
         panelMatriz.add(bash2);
@@ -234,6 +279,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sql1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                sql1MouseExited(evt);
+            }
         });
         panelMatriz.add(sql1);
 
@@ -241,6 +289,9 @@ public class Game extends javax.swing.JFrame {
         sql2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sql2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                sql2MouseExited(evt);
             }
         });
         panelMatriz.add(sql2);
@@ -250,6 +301,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 perl1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                perl1MouseExited(evt);
+            }
         });
         panelMatriz.add(perl1);
 
@@ -257,6 +311,9 @@ public class Game extends javax.swing.JFrame {
         perl2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 perl2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                perl2MouseExited(evt);
             }
         });
         panelMatriz.add(perl2);
@@ -266,6 +323,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 swift1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                swift1MouseExited(evt);
+            }
         });
         panelMatriz.add(swift1);
 
@@ -273,6 +333,9 @@ public class Game extends javax.swing.JFrame {
         swift2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 swift2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                swift2MouseExited(evt);
             }
         });
         panelMatriz.add(swift2);
@@ -282,6 +345,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kt1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                kt1MouseExited(evt);
+            }
         });
         panelMatriz.add(kt1);
 
@@ -289,6 +355,9 @@ public class Game extends javax.swing.JFrame {
         kt2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 kt2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                kt2MouseExited(evt);
             }
         });
         panelMatriz.add(kt2);
@@ -298,6 +367,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 php1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                php1MouseExited(evt);
+            }
         });
         panelMatriz.add(php1);
 
@@ -305,6 +377,9 @@ public class Game extends javax.swing.JFrame {
         php2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 php2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                php2MouseExited(evt);
             }
         });
         panelMatriz.add(php2);
@@ -314,6 +389,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 r1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                r1MouseExited(evt);
+            }
         });
         panelMatriz.add(r1);
 
@@ -321,6 +399,9 @@ public class Game extends javax.swing.JFrame {
         r2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 r2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                r2MouseExited(evt);
             }
         });
         panelMatriz.add(r2);
@@ -330,6 +411,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ru1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ru1MouseExited(evt);
+            }
         });
         panelMatriz.add(ru1);
 
@@ -337,6 +421,9 @@ public class Game extends javax.swing.JFrame {
         ru2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ru2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ru2MouseExited(evt);
             }
         });
         panelMatriz.add(ru2);
@@ -346,6 +433,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rs1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rs1MouseExited(evt);
+            }
         });
         panelMatriz.add(rs1);
 
@@ -353,6 +443,9 @@ public class Game extends javax.swing.JFrame {
         rs2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 rs2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                rs2MouseExited(evt);
             }
         });
         panelMatriz.add(rs2);
@@ -362,6 +455,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 scala1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                scala1MouseExited(evt);
+            }
         });
         panelMatriz.add(scala1);
 
@@ -369,6 +465,9 @@ public class Game extends javax.swing.JFrame {
         scala2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 scala2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                scala2MouseExited(evt);
             }
         });
         panelMatriz.add(scala2);
@@ -378,6 +477,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ts1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ts1MouseExited(evt);
+            }
         });
         panelMatriz.add(ts1);
 
@@ -385,6 +487,9 @@ public class Game extends javax.swing.JFrame {
         ts2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ts2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ts2MouseExited(evt);
             }
         });
         panelMatriz.add(ts2);
@@ -394,6 +499,9 @@ public class Game extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 go1MouseClicked(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                go1MouseExited(evt);
+            }
         });
         panelMatriz.add(go1);
 
@@ -401,6 +509,9 @@ public class Game extends javax.swing.JFrame {
         go2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 go2MouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                go2MouseExited(evt);
             }
         });
         panelMatriz.add(go2);
@@ -418,11 +529,12 @@ public class Game extends javax.swing.JFrame {
         iconBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/backgroundGame.png"))); // NOI18N
         backgroundGame.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 490));
 
-        jLabel1.setText("10000");
-        backgroundGame.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, 50, -1));
+        jLabelScore.setForeground(new java.awt.Color(255, 255, 255));
+        backgroundGame.add(jLabelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 36, 50, 20));
 
-        jLabel2.setText("SnakyDH");
-        backgroundGame.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, -1, 20));
+        jLabelName.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelName.setText("SnakyDH");
+        backgroundGame.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 60, 20));
 
         getContentPane().add(backgroundGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 900, 590));
 
@@ -448,297 +560,303 @@ public class Game extends javax.swing.JFrame {
                 images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
             }
         }
+        
+        score = 0;
+        jLabelScore.setText(score+"");
+        
+        click = 0;
+        clickedImg1 = 0;
+        clickedImg2 = 0;
     }//GEN-LAST:event_btnResetMouseClicked
 
     private void java1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_java1MouseClicked
-
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_java1MouseClicked
 
     private void java2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_java2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_java2MouseClicked
 
     private void js1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_js1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_js1MouseClicked
 
     private void js2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_js2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_js2MouseClicked
 
     private void c1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_c1MouseClicked
 
     private void c2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_c2MouseClicked
 
     private void cpp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cpp1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_cpp1MouseClicked
 
     private void cpp2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cpp2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
         
     }//GEN-LAST:event_cpp2MouseClicked
 
     private void py1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_py1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_py1MouseClicked
 
     private void py2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_py2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_py2MouseClicked
 
     private void cs1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cs1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_cs1MouseClicked
 
     private void cs2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cs2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_cs2MouseClicked
 
     private void bash1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bash1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_bash1MouseClicked
 
     private void bash2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bash2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_bash2MouseClicked
 
     private void sql1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sql1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_sql1MouseClicked
 
     private void sql2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sql2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_sql2MouseClicked
 
     private void perl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perl1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_perl1MouseClicked
 
     private void perl2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perl2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_perl2MouseClicked
 
     private void swift1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_swift1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_swift1MouseClicked
 
     private void swift2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_swift2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_swift2MouseClicked
 
     private void kt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kt1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_kt1MouseClicked
 
     private void kt2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kt2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_kt2MouseClicked
 
     private void php1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_php1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_php1MouseClicked
 
     private void php2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_php2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_php2MouseClicked
 
     private void r1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_r1MouseClicked
 
     private void r2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_r2MouseClicked
 
     private void ru1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ru1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_ru1MouseClicked
 
     private void ru2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ru2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_ru2MouseClicked
 
     private void rs1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rs1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_rs1MouseClicked
 
     private void rs2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rs2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_rs2MouseClicked
 
     private void scala1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scala1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_scala1MouseClicked
 
     private void scala2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scala2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_scala2MouseClicked
 
     private void ts1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ts1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_ts1MouseClicked
 
     private void ts2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ts2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_ts2MouseClicked
 
     private void go1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_go1MouseClicked
 
     private void go2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        flipImage(evt);
     }//GEN-LAST:event_go2MouseClicked
+
+    private void java1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_java1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_java1MouseExited
+
+    private void java2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_java2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_java2MouseExited
+
+    private void js1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_js1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_js1MouseExited
+
+    private void js2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_js2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_js2MouseExited
+
+    private void c1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_c1MouseExited
+
+    private void c2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_c2MouseExited
+
+    private void cpp1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cpp1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_cpp1MouseExited
+
+    private void cpp2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cpp2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_cpp2MouseExited
+
+    private void py1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_py1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_py1MouseExited
+
+    private void py2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_py2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_py2MouseExited
+
+    private void cs1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cs1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_cs1MouseExited
+
+    private void cs2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cs2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_cs2MouseExited
+
+    private void bash1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bash1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_bash1MouseExited
+
+    private void bash2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bash2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_bash2MouseExited
+
+    private void sql1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sql1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_sql1MouseExited
+
+    private void sql2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sql2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_sql2MouseExited
+
+    private void perl1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perl1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_perl1MouseExited
+
+    private void perl2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perl2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_perl2MouseExited
+
+    private void swift1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_swift1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_swift1MouseExited
+
+    private void swift2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_swift2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_swift2MouseExited
+
+    private void kt1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kt1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_kt1MouseExited
+
+    private void kt2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kt2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_kt2MouseExited
+
+    private void php1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_php1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_php1MouseExited
+
+    private void php2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_php2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_php2MouseExited
+
+    private void r1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_r1MouseExited
+
+    private void r2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_r2MouseExited
+
+    private void ru1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ru1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_ru1MouseExited
+
+    private void ru2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ru2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_ru2MouseExited
+
+    private void rs1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rs1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_rs1MouseExited
+
+    private void rs2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rs2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_rs2MouseExited
+
+    private void scala1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scala1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_scala1MouseExited
+
+    private void scala2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scala2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_scala2MouseExited
+
+    private void ts1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ts1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_ts1MouseExited
+
+    private void ts2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ts2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_ts2MouseExited
+
+    private void go1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go1MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_go1MouseExited
+
+    private void go2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go2MouseExited
+        checkPairs(evt);
+    }//GEN-LAST:event_go2MouseExited
                               
  
     
@@ -798,8 +916,8 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel go1;
     private javax.swing.JLabel go2;
     private javax.swing.JLabel iconBG;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelName;
+    private javax.swing.JLabel jLabelScore;
     private javax.swing.JLabel java1;
     private javax.swing.JLabel java2;
     private javax.swing.JLabel js1;
@@ -838,7 +956,9 @@ public class Game extends javax.swing.JFrame {
         initImages();
         initArrays(numeroImagenes); 
         initArrays(controlRepeticiones);
-                
+        initArrays(controlParejas);
+        initArrays(clickCounter);
+        
         for (int i = 0; i < numeroImagenes.length; i++) {
             imagePosition = nRandom.nextInt(18);
             
@@ -859,44 +979,96 @@ public class Game extends javax.swing.JFrame {
         }
     }
 
+    private void flipImage(java.awt.event.MouseEvent evt){
+        for (int i = 0; i < images.length; i++) {
+            if(evt.getSource() == images[i] && checkFoundPairs(i)){
+                
+                clickCounter[i]++;
+                
+                if(clickCounter[i] < 2){
+                    click++;
+                    images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
+            
+                    if (click == 1) {
+                        clickedImg1 = i;
+                        System.out.println("Click 1: " + clickedImg1);
+                    } else if (click == 2){
+                        clickedImg2 = i;
+                        System.out.println("Click 2: " + clickedImg2);
+                    }
+                }
+                
+            }
+        }
+    }
+    
+    private void checkPairs(java.awt.event.MouseEvent evt){
+        for (int i = 0; i < images.length; i++) {
+            if(evt.getSource() == images[i]){
+                if (click == 2) {
+                    if (numeroImagenes[clickedImg1] == numeroImagenes[clickedImg2]) {
+                        score += 100;
+                        controlParejas[clickedImg1] = 1;
+                        controlParejas[clickedImg2] = 1;
+                    } else {
+                        images[clickedImg1].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
+                        images[clickedImg2].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
+                        score -= 50;
+                        clickCounter[clickedImg1] = 0;
+                        clickCounter[clickedImg2] = 0;
+                    }
+                    click = 0;
+                }
+            }
+        }
+        jLabelScore.setText(score+"");
+    }
+    
     private void initImages() {
-        images[0] = bash1; 
-        images[1] = bash2; 
-        images[2] = cs1; 
-        images[3] = cs2; 
+        images[0] = java1; 
+        images[1] = java2; 
+        images[2] = js1; 
+        images[3] = js2; 
         images[4] = c1; 
         images[5] = c2; 
         images[6] = cpp1; 
         images[7] = cpp2; 
-        images[8] = go1; 
-        images[9] = go2; 
-        images[10] = java1; 
-        images[11] = java2;
-        images[12] = js1; 
-        images[13] = js2; 
-        images[14] = kt1; 
-        images[15] = kt2;
+        images[8] = py1; 
+        images[9] = py2; 
+        images[10] = cs1; 
+        images[11] = cs2;
+        images[12] = bash1; 
+        images[13] = bash2; 
+        images[14] = sql1; 
+        images[15] = sql2;
         images[16] = perl1; 
         images[17] = perl2;
-        images[18] = php1; 
-        images[19] = php2; 
-        images[20] = py1; 
-        images[21] = py2; 
-        images[22] = r1; 
-        images[23] = r2;
-        images[24] = ru1; 
-        images[25] = ru2; 
-        images[26] = rs1; 
-        images[27] = rs2; 
-        images[28] = scala1; 
-        images[29] = scala2;
-        images[30] = sql1; 
-        images[31] = sql2; 
-        images[32] = swift1; 
-        images[33] = swift2; 
-        images[34] = ts1; 
-        images[35] = ts2;
-        
+        images[18] = swift1; 
+        images[19] = swift2; 
+        images[20] = kt1; 
+        images[21] = kt2; 
+        images[22] = php1; 
+        images[23] = php2;
+        images[24] = r1; 
+        images[25] = r2; 
+        images[26] = ru1; 
+        images[27] = ru2; 
+        images[28] = rs1; 
+        images[29] = rs2;
+        images[30] = scala1; 
+        images[31] = scala2; 
+        images[32] = ts1; 
+        images[33] = ts2; 
+        images[34] = go1; 
+        images[35] = go2;
+    }
+
+    private boolean checkFoundPairs(int i) {
+        if (controlParejas[i] != 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
