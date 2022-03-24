@@ -451,117 +451,60 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_btnResetMouseClicked
 
     private void java1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_java1MouseClicked
-
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_java1MouseClicked
 
     private void java2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_java2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_java2MouseClicked
 
     private void js1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_js1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_js1MouseClicked
 
     private void js2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_js2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_js2MouseClicked
 
     private void c1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_c1MouseClicked
 
     private void c2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_c2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_c2MouseClicked
 
     private void cpp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cpp1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_cpp1MouseClicked
 
     private void cpp2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cpp2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
         
     }//GEN-LAST:event_cpp2MouseClicked
 
     private void py1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_py1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_py1MouseClicked
 
     private void py2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_py2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_py2MouseClicked
 
     private void cs1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cs1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_cs1MouseClicked
 
     private void cs2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cs2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_cs2MouseClicked
 
     private void bash1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bash1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_bash1MouseClicked
 
     private void bash2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bash2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_bash2MouseClicked
 
     private void sql1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sql1MouseClicked
@@ -573,11 +516,7 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_sql1MouseClicked
 
     private void sql2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sql2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_sql2MouseClicked
 
     private void perl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perl1MouseClicked
@@ -589,19 +528,11 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_perl1MouseClicked
 
     private void perl2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_perl2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_perl2MouseClicked
 
     private void swift1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_swift1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_swift1MouseClicked
 
     private void swift2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_swift2MouseClicked
@@ -613,75 +544,39 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_swift2MouseClicked
 
     private void kt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kt1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_kt1MouseClicked
 
     private void kt2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_kt2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_kt2MouseClicked
 
     private void php1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_php1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_php1MouseClicked
 
     private void php2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_php2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_php2MouseClicked
 
     private void r1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_r1MouseClicked
 
     private void r2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_r2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_r2MouseClicked
 
     private void ru1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ru1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_ru1MouseClicked
 
     private void ru2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ru2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_ru2MouseClicked
 
     private void rs1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rs1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_rs1MouseClicked
 
     private void rs2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rs2MouseClicked
@@ -693,51 +588,27 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_rs2MouseClicked
 
     private void scala1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scala1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_scala1MouseClicked
 
     private void scala2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_scala2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_scala2MouseClicked
 
     private void ts1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ts1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_ts1MouseClicked
 
     private void ts2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ts2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_ts2MouseClicked
 
     private void go1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go1MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_go1MouseClicked
 
     private void go2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go2MouseClicked
-        for (int i = 0; i < images.length; i++) {
-            if(evt.getSource() == images[i]){
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
-            }
-        }
+        randomize(evt);
     }//GEN-LAST:event_go2MouseClicked
                               
  
@@ -859,6 +730,14 @@ public class Game extends javax.swing.JFrame {
         }
     }
 
+    private void randomize(java.awt.event.MouseEvent evt){
+        for (int i = 0; i < images.length; i++) {
+            if(evt.getSource() == images[i]){
+                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/"+ numeroImagenes[i] +".png")));
+            }
+        }
+    }
+    
     private void initImages() {
         images[0] = java1; 
         images[1] = java2; 
@@ -896,7 +775,6 @@ public class Game extends javax.swing.JFrame {
         images[33] = ts2; 
         images[34] = go1; 
         images[35] = go2;
-        
     }
 
 }
