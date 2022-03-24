@@ -860,42 +860,42 @@ public class Game extends javax.swing.JFrame {
     }
 
     private void initImages() {
-        images[0] = bash1; 
-        images[1] = bash2; 
-        images[2] = cs1; 
-        images[3] = cs2; 
+        images[0] = java1; 
+        images[1] = java2; 
+        images[2] = js1; 
+        images[3] = js2; 
         images[4] = c1; 
         images[5] = c2; 
         images[6] = cpp1; 
         images[7] = cpp2; 
-        images[8] = go1; 
-        images[9] = go2; 
-        images[10] = java1; 
-        images[11] = java2;
-        images[12] = js1; 
-        images[13] = js2; 
-        images[14] = kt1; 
-        images[15] = kt2;
+        images[8] = py1; 
+        images[9] = py2; 
+        images[10] = cs1; 
+        images[11] = cs2;
+        images[12] = bash1; 
+        images[13] = bash2; 
+        images[14] = sql1; 
+        images[15] = sql2;
         images[16] = perl1; 
         images[17] = perl2;
-        images[18] = php1; 
-        images[19] = php2; 
-        images[20] = py1; 
-        images[21] = py2; 
-        images[22] = r1; 
-        images[23] = r2;
-        images[24] = ru1; 
-        images[25] = ru2; 
-        images[26] = rs1; 
-        images[27] = rs2; 
-        images[28] = scala1; 
-        images[29] = scala2;
-        images[30] = sql1; 
-        images[31] = sql2; 
-        images[32] = swift1; 
-        images[33] = swift2; 
-        images[34] = ts1; 
-        images[35] = ts2;
+        images[18] = swift1; 
+        images[19] = swift2; 
+        images[20] = kt1; 
+        images[21] = kt2; 
+        images[22] = php1; 
+        images[23] = php2;
+        images[24] = r1; 
+        images[25] = r2; 
+        images[26] = ru1; 
+        images[27] = ru2; 
+        images[28] = rs1; 
+        images[29] = rs2;
+        images[30] = scala1; 
+        images[31] = scala2; 
+        images[32] = ts1; 
+        images[33] = ts2; 
+        images[34] = go1; 
+        images[35] = go2;
         
     }
 
