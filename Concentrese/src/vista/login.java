@@ -174,7 +174,7 @@ public class Login extends javax.swing.JFrame {
         Developer1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         background.add(Developer1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, 320, 50));
 
-        iconJava.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/java.png"))); // NOI18N
+        iconJava.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/6.png"))); // NOI18N
         background.add(iconJava, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 150, 100, 110));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
