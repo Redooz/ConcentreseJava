@@ -3,7 +3,7 @@ package vista;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-
+import vista.Login;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -25,12 +25,16 @@ public class Game extends javax.swing.JFrame {
     /**
      * Creates new form game
      */
-    public Game() {
+    private String jugador;
+    public Game(String player) {
         initComponents();
         initGame();
+        this.jugador = player;
+        System.out.println(player);
+        jLabelName.setText(player);
         
     }
-
+    
     
     //private void init
     /**
@@ -892,8 +896,9 @@ public class Game extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            String jugadore = "SnakyFake";
             public void run() {
-                new Game().setVisible(true);
+                new Game(jugadore).setVisible(true);
             }
         });
     }

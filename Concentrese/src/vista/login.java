@@ -13,9 +13,7 @@ import modelo.Archivo;
  * @author SnakyDH
  */
 public class Login extends javax.swing.JFrame {
-    /**
-     * Creates new form login
-     */
+
     public Login() {
         initComponents();
     }
@@ -95,6 +93,11 @@ public class Login extends javax.swing.JFrame {
 
         txtNombre.setForeground(new java.awt.Color(102, 102, 102));
         txtNombre.setText("Nick Name");
+        txtNombre.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNombreMouseClicked(evt);
+            }
+        });
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
@@ -202,7 +205,7 @@ public class Login extends javax.swing.JFrame {
         String nombre = txtNombre.getText();
         Usuario userLogin = new Usuario(acronimo, nombre, 0); //Se crea un usuario
         
-        Game ventanaJuego = new Game(); //Se crea una ventana de juego
+        Game ventanaJuego = new Game(txtNombre.getText()); //Se crea una ventana de juego
 
         ventanaJuego.setVisible(true); //Se abre la ventana de juego
 
@@ -226,6 +229,10 @@ public class Login extends javax.swing.JFrame {
     private void txtAcronimoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAcronimoMouseClicked
         txtAcronimo.setText(null);
     }//GEN-LAST:event_txtAcronimoMouseClicked
+
+    private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
+        txtNombre.setText(null);
+    }//GEN-LAST:event_txtNombreMouseClicked
 
     /**
      * @param args the command line arguments
