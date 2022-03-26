@@ -40,6 +40,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "acronimo=" + acronimo + ", nombre=" + nombre + ", puntaje=" + puntaje + '}';
+        return "User: " + nombre + ", Score: " + puntaje + "\n";
     }    
 }

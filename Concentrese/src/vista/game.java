@@ -1,38 +1,32 @@
 package vista;
 
+import controlador.Usuario;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import vista.Login;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import modelo.Archivo;
 
 /**
  *
  * @author SnakyDH
  */
 public class Game extends javax.swing.JFrame {
-    JLabel[] images = new JLabel[36];
-    int numeroImagenes[] = new int[36];
-    int controlRepeticiones[] = new int[18];
-    int controlParejas[] = new int[36];
-    int clickCounter[] = new int[36];
-    int click = 0, clickedImg1 = 0,clickedImg2 = 0;
-    int score = 0;
-    /**
-     * Creates new form game
-     */
+    private JLabel[] images = new JLabel[36];
+    private int numeroImagenes[] = new int[36];
+    private int controlRepeticiones[] = new int[18];
+    private int controlParejas[] = new int[36];
+    private int clickCounter[] = new int[36];
+    private int click = 0, clickedImg1 = 0,clickedImg2 = 0;
+    private int score = 0;
     private String jugador;
+    private Archivo scoreFile = new Archivo();
+    
     public Game(String player) {
         initComponents();
         initGame();
         this.jugador = player;
         System.out.println(player);
         jLabelName.setText(player);
-        
     }
     
     
@@ -87,6 +81,7 @@ public class Game extends javax.swing.JFrame {
         go1 = new javax.swing.JLabel();
         go2 = new javax.swing.JLabel();
         btnReset = new javax.swing.JButton();
+        exitBtn = new javax.swing.JButton();
         iconBG = new javax.swing.JLabel();
         jLabelScore = new javax.swing.JLabel();
         jLabelName = new javax.swing.JLabel();
@@ -530,6 +525,14 @@ public class Game extends javax.swing.JFrame {
         });
         backgroundGame.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
 
+        exitBtn.setText("Exit and Save");
+        exitBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                exitBtnMouseClicked(evt);
+            }
+        });
+        backgroundGame.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, -1, -1));
+
         iconBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/backgroundGame.png"))); // NOI18N
         backgroundGame.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 490));
 
@@ -543,6 +546,11 @@ public class Game extends javax.swing.JFrame {
         getContentPane().add(backgroundGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 900, 590));
 
         ScoresMenu.setText("Scores");
+        ScoresMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ScoresMenuMouseClicked(evt);
+            }
+        });
         MenuBar.add(ScoresMenu);
 
         HelpMenu.setText("Help");
@@ -562,6 +570,7 @@ public class Game extends javax.swing.JFrame {
             initGame();
             for (int i = 0; i < images.length; i++) {
                 images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
+                //System.out.println(images[i].getIcon().toString());
             }
         }
         
@@ -861,6 +870,15 @@ public class Game extends javax.swing.JFrame {
     private void go2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_go2MouseExited
         checkPairs(evt);
     }//GEN-LAST:event_go2MouseExited
+
+    private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
+        saveScore();
+    }//GEN-LAST:event_exitBtnMouseClicked
+
+    private void ScoresMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ScoresMenuMouseClicked
+        Scores showScores = new Scores(this, rootPaneCheckingEnabled);
+        showScores.setVisible(true);
+    }//GEN-LAST:event_ScoresMenuMouseClicked
                               
  
     
@@ -918,6 +936,7 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel cpp2;
     private javax.swing.JLabel cs1;
     private javax.swing.JLabel cs2;
+    private javax.swing.JButton exitBtn;
     private javax.swing.JLabel go1;
     private javax.swing.JLabel go2;
     private javax.swing.JLabel iconBG;
@@ -1074,6 +1093,11 @@ public class Game extends javax.swing.JFrame {
         } else {
             return false;
         }
+    }
+
+    private void saveScore() {
+        Usuario usuarioGuardado = new Usuario("", jugador, score);
+        scoreFile.escribir(usuarioGuardado);
     }
 
 }

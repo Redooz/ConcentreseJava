@@ -1,5 +1,6 @@
 package modelo;
 
+import controlador.Usuario;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -11,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import controlador.Usuario;
 
 public class Archivo {
     private File fichero;
@@ -19,21 +19,21 @@ public class Archivo {
     private ObjectOutputStream salida;  
 
     public Archivo() {
-        fichero = new File("info.txt");
+        fichero = new File("scoreUsuario.txt");
         
-        if ( !fichero.exists() ) {
+        if(! fichero.exists()){
             System.out.println("Archivo no existe. ");
         } else {
-            System.out.println("El archivo ya existe. ");
+            System.out.println("Archivo existe. ");
         }
     }
     
     public void escribir(Usuario nuevo){        
         try {
-            salida = new ObjectOutputStream(new FileOutputStream("usuarios.txt",true));
+            salida = new ObjectOutputStream(new FileOutputStream(fichero, true));
             salida.writeUnshared(nuevo);
             salida.close();
-        
+            
             System.out.println("Archivo guardado ");
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
@@ -47,7 +47,7 @@ public class Archivo {
         FileInputStream f = null;
         List <Usuario> lista = null;
         try {
-            f = new FileInputStream("usuarios.txt");
+            f = new FileInputStream(fichero);
             lista = new ArrayList<Usuario>();
             while ( f.available() > 0 ) { //Revisando si el archivo tiene bites
                 ObjectInputStream e = new ObjectInputStream(f);
@@ -68,6 +68,5 @@ public class Archivo {
             }
         }
         return lista;
-        
     }
 }
