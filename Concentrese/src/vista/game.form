@@ -8,6 +8,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Scores"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ScoresMenuMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="HelpMenu">
           <Properties>
@@ -548,6 +551,19 @@
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="70" y="500" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
+        <Component class="javax.swing.JButton" name="exitBtn">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Exit and Save"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="exitBtnMouseClicked"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="740" y="500" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
