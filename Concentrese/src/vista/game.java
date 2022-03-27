@@ -873,6 +873,8 @@ public class Game extends javax.swing.JFrame {
 
     private void exitBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_exitBtnMouseClicked
         saveScore();
+        setVisible(false);
+        System.exit(0);
     }//GEN-LAST:event_exitBtnMouseClicked
 
     private void ScoresMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ScoresMenuMouseClicked
