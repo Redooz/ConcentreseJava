@@ -1096,7 +1096,7 @@ public class Game extends javax.swing.JFrame {
     }
 
     private void saveScore() {
-        Usuario usuarioGuardado = new Usuario("", jugador, score);
+        Usuario usuarioGuardado = new Usuario("abc", jugador, score);
         scoreFile.escribir(usuarioGuardado);
     }
 

@@ -30,15 +30,15 @@ public class Archivo {
     
     public void escribir(Usuario nuevo){        
         try {
-            salida = new ObjectOutputStream(new FileOutputStream(fichero, true));
-            salida.writeUnshared(nuevo);
-            salida.close();
-            
-            System.out.println("Archivo guardado ");
+        salida = new ObjectOutputStream(new FileOutputStream(fichero, true));
+        salida.writeUnshared(nuevo);
+        salida.close();
+        
+        System.out.println("Archivo guardado ");
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(Archivo.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
