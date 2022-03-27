@@ -517,31 +517,40 @@ public class Game extends javax.swing.JFrame {
 
         backgroundGame.add(panelMatriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 480, 480));
 
+        btnReset.setBackground(new java.awt.Color(29, 36, 44));
+        btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/resetIcon.png"))); // NOI18N
         btnReset.setText("Reset");
         btnReset.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnResetMouseClicked(evt);
             }
         });
-        backgroundGame.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 500, -1, -1));
+        backgroundGame.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 170, -1));
 
+        exitBtn.setBackground(new java.awt.Color(29, 36, 44));
+        exitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/saveIcon.png"))); // NOI18N
         exitBtn.setText("Exit and Save");
         exitBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 exitBtnMouseClicked(evt);
             }
         });
-        backgroundGame.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, -1, -1));
+        exitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitBtnActionPerformed(evt);
+            }
+        });
+        backgroundGame.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 190, 90));
 
         iconBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/backgroundGame.png"))); // NOI18N
         backgroundGame.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 490));
 
         jLabelScore.setForeground(new java.awt.Color(255, 255, 255));
-        backgroundGame.add(jLabelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 36, 50, 20));
+        backgroundGame.add(jLabelScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 36, 210, 20));
 
         jLabelName.setForeground(new java.awt.Color(255, 255, 255));
         jLabelName.setText("SnakyDH");
-        backgroundGame.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 60, 20));
+        backgroundGame.add(jLabelName, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 180, 20));
 
         getContentPane().add(backgroundGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 900, 590));
 
@@ -881,6 +890,10 @@ public class Game extends javax.swing.JFrame {
         Scores showScores = new Scores(this, rootPaneCheckingEnabled);
         showScores.setVisible(true);
     }//GEN-LAST:event_ScoresMenuMouseClicked
+
+    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitBtnActionPerformed
                               
  
     

@@ -70,12 +70,22 @@ public class Login extends javax.swing.JFrame {
                 btnJugarActionPerformed(evt);
             }
         });
+        btnJugar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnJugarKeyPressed(evt);
+            }
+        });
 
         btmSalir.setBackground(new java.awt.Color(255, 86, 86));
         btmSalir.setText("Exit");
         btmSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btmSalirActionPerformed(evt);
+            }
+        });
+        btmSalir.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btmSalirKeyPressed(evt);
             }
         });
 
@@ -234,6 +244,27 @@ public class Login extends javax.swing.JFrame {
     private void txtNombreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNombreMouseClicked
         txtNombre.setText(null);
     }//GEN-LAST:event_txtNombreMouseClicked
+
+    private void btnJugarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnJugarKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        // Se leen los text fields de la ventana
+        String acronimo = txtAcronimo.getText(); 
+        String nombre = txtNombre.getText();
+        Usuario userLogin = new Usuario(acronimo, nombre, 0); //Se crea un usuario
+        
+        Game ventanaJuego = new Game(txtNombre.getText()); //Se crea una ventana de juego
+
+        ventanaJuego.setVisible(true); //Se abre la ventana de juego
+
+        setVisible(false); //Se cierra la ventana de login
+        dispose();
+        }
+    }//GEN-LAST:event_btnJugarKeyPressed
+
+    private void btmSalirKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btmSalirKeyPressed
+        setVisible(false);
+        System.exit(0);
+    }//GEN-LAST:event_btmSalirKeyPressed
 
     /**
      * @param args the command line arguments

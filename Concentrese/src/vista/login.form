@@ -154,6 +154,7 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnJugarActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btnJugarKeyPressed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btmSalir">
@@ -165,6 +166,7 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btmSalirActionPerformed"/>
+                <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="btmSalirKeyPressed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="txtAcronimo">
