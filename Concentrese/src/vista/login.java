@@ -7,7 +7,6 @@ package vista;
 
 import controlador.Usuario;
 import java.awt.event.KeyEvent;
-import modelo.Archivo;
 
 /**
  *
