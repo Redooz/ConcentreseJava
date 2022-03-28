@@ -95,22 +95,12 @@ public class Login extends javax.swing.JFrame {
                 txtAcronimoMouseClicked(evt);
             }
         });
-        txtAcronimo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAcronimoActionPerformed(evt);
-            }
-        });
 
         txtNombre.setForeground(new java.awt.Color(102, 102, 102));
         txtNombre.setText("Nick Name");
         txtNombre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtNombreMouseClicked(evt);
-            }
-        });
-        txtNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNombreActionPerformed(evt);
             }
         });
 
@@ -227,14 +217,6 @@ public class Login extends javax.swing.JFrame {
         setVisible(false);
         System.exit(0);
     }//GEN-LAST:event_btmSalirActionPerformed
-
-    private void txtAcronimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAcronimoActionPerformed
-        
-    }//GEN-LAST:event_txtAcronimoActionPerformed
-
-    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
-        
-    }//GEN-LAST:event_txtNombreActionPerformed
 
     private void txtAcronimoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAcronimoMouseClicked
         txtAcronimo.setText(null);

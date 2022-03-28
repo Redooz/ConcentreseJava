@@ -19,7 +19,7 @@ public class Game extends javax.swing.JFrame {
     private int clickCounter[] = new int[36];
     private int click = 0, clickedImg1 = 0,clickedImg2 = 0;
     private int score = 0;
-    private int counterPairs = 17;
+    private int counterPairs = 0;
     private String jugador;
     private Archivo scoreFile = new Archivo();
     
@@ -537,11 +537,6 @@ public class Game extends javax.swing.JFrame {
                 exitBtnMouseClicked(evt);
             }
         });
-        exitBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitBtnActionPerformed(evt);
-            }
-        });
         backgroundGame.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 190, 90));
 
         iconBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/backgroundGame.png"))); // NOI18N
@@ -878,10 +873,6 @@ public class Game extends javax.swing.JFrame {
         Scores showScores = new Scores(this, rootPaneCheckingEnabled);
         showScores.setVisible(true);
     }//GEN-LAST:event_ScoresMenuMouseClicked
-
-    private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_exitBtnActionPerformed
                               
  
     
