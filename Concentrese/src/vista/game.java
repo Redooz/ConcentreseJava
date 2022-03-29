@@ -1,10 +1,12 @@
 package vista;
 
+import vista.BarMenu.Scores;
 import controlador.Usuario;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import modelo.Archivo;
+import vista.BarMenu.Help;
 
 /**
  *
@@ -25,7 +27,7 @@ public class Game extends javax.swing.JFrame {
         initComponents();
         initGame();
         this.jugador = player;
-        System.out.println(player);
+        //System.out.println(player);
         jLabelName.setText(player);
     }
     
@@ -518,6 +520,7 @@ public class Game extends javax.swing.JFrame {
         backgroundGame.add(panelMatriz, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 480, 480));
 
         btnReset.setBackground(new java.awt.Color(29, 36, 44));
+        btnReset.setForeground(new java.awt.Color(255, 255, 255));
         btnReset.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/resetIcon.png"))); // NOI18N
         btnReset.setText("Reset");
         btnReset.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -528,6 +531,7 @@ public class Game extends javax.swing.JFrame {
         backgroundGame.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 170, -1));
 
         exitBtn.setBackground(new java.awt.Color(29, 36, 44));
+        exitBtn.setForeground(new java.awt.Color(255, 255, 255));
         exitBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/saveIcon.png"))); // NOI18N
         exitBtn.setText("Exit and Save");
         exitBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -540,7 +544,7 @@ public class Game extends javax.swing.JFrame {
                 exitBtnActionPerformed(evt);
             }
         });
-        backgroundGame.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 190, 90));
+        backgroundGame.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, 190, 90));
 
         iconBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/backgroundGame.png"))); // NOI18N
         backgroundGame.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 490));
@@ -563,6 +567,11 @@ public class Game extends javax.swing.JFrame {
         MenuBar.add(ScoresMenu);
 
         HelpMenu.setText("Help");
+        HelpMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HelpMenuMouseClicked(evt);
+            }
+        });
         MenuBar.add(HelpMenu);
 
         AboutMenu.setText("About Us");
@@ -894,6 +903,11 @@ public class Game extends javax.swing.JFrame {
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_exitBtnActionPerformed
+
+    private void HelpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpMenuMouseClicked
+        Help showHelp = new Help(this, rootPaneCheckingEnabled);
+        showHelp.setVisible(true);
+    }//GEN-LAST:event_HelpMenuMouseClicked
                               
  
     
@@ -1004,12 +1018,12 @@ public class Game extends javax.swing.JFrame {
             if (controlRepeticiones[imagePosition] < 2) {
                 numeroImagenes[i] = imagePosition + 1;
                 controlRepeticiones[imagePosition]++;
-                System.out.print(numeroImagenes[i] + "-");
+                //System.out.print(numeroImagenes[i] + "-");
             } else {
                 i--;
             }
         }
-        System.out.print("\n");
+        //System.out.print("\n");
     }
     
     private void initArrays(int[] array) {
@@ -1030,10 +1044,10 @@ public class Game extends javax.swing.JFrame {
             
                     if (click == 1) {
                         clickedImg1 = i;
-                        System.out.println("Click 1: " + clickedImg1);
+                        //System.out.println("Click 1: " + clickedImg1);
                     } else if (click == 2){
                         clickedImg2 = i;
-                        System.out.println("Click 2: " + clickedImg2);
+                        //System.out.println("Click 2: " + clickedImg2);
                     }
                 }
                 
