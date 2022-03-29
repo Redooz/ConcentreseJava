@@ -6,6 +6,7 @@ import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import modelo.Archivo;
+import vista.BarMenu.AboutUs;
 import vista.BarMenu.Help;
 
 /**
@@ -575,6 +576,13 @@ public class Game extends javax.swing.JFrame {
         MenuBar.add(HelpMenu);
 
         AboutMenu.setText("About Us");
+        AboutMenu.setContentAreaFilled(false);
+        AboutMenu.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        AboutMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AboutMenuMouseClicked(evt);
+            }
+        });
         MenuBar.add(AboutMenu);
 
         setJMenuBar(MenuBar);
@@ -908,6 +916,11 @@ public class Game extends javax.swing.JFrame {
         Help showHelp = new Help(this, rootPaneCheckingEnabled);
         showHelp.setVisible(true);
     }//GEN-LAST:event_HelpMenuMouseClicked
+
+    private void AboutMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AboutMenuMouseClicked
+        AboutUs showAbout = new AboutUs(this, rootPaneCheckingEnabled);
+        showAbout.setVisible(true);
+    }//GEN-LAST:event_AboutMenuMouseClicked
                               
  
     

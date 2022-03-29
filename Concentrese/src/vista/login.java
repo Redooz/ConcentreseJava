@@ -230,11 +230,11 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btmSalirActionPerformed
 
     private void txtAcronimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAcronimoActionPerformed
-        
+        txtAcronimo.setText(null);
     }//GEN-LAST:event_txtAcronimoActionPerformed
 
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
-        
+        txtNombre.setText(null);
     }//GEN-LAST:event_txtNombreActionPerformed
 
     private void txtAcronimoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtAcronimoMouseClicked

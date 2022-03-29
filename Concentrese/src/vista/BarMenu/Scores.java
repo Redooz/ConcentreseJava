@@ -35,9 +35,13 @@ public class Scores extends javax.swing.JDialog {
         txtScores = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(106, 126, 252));
 
         txtScores.setEditable(false);
+        txtScores.setBackground(new java.awt.Color(106, 126, 252));
         txtScores.setColumns(20);
+        txtScores.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        txtScores.setForeground(new java.awt.Color(255, 255, 255));
         txtScores.setRows(5);
         jScrollPane1.setViewportView(txtScores);
 
