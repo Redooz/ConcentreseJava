@@ -5,6 +5,7 @@ import controlador.Usuario;
 import java.util.Random;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import modelo.Archivo;
 import vista.BarMenu.AboutUs;
 import vista.BarMenu.Help;
@@ -21,6 +22,7 @@ public class Game extends javax.swing.JFrame {
     private int clickCounter[] = new int[36];
     private int click = 0, clickedImg1 = 0,clickedImg2 = 0;
     private int score = 0;
+    private int counterPairs = 0;
     private String jugador;
     private Archivo scoreFile = new Archivo();
     
@@ -545,7 +547,7 @@ public class Game extends javax.swing.JFrame {
                 exitBtnActionPerformed(evt);
             }
         });
-        backgroundGame.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 260, 190, 90));
+        backgroundGame.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 190, 90));
 
         iconBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/img/backgroundGame.png"))); // NOI18N
         backgroundGame.add(iconBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, 490));
@@ -591,21 +593,7 @@ public class Game extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnResetMouseClicked
-        // TODO add your handling code here:
-        if(evt.getSource() == btnReset){
-            initGame();
-            for (int i = 0; i < images.length; i++) {
-                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
-                //System.out.println(images[i].getIcon().toString());
-            }
-        }
-        
-        score = 0;
-        jLabelScore.setText(score+"");
-        
-        click = 0;
-        clickedImg1 = 0;
-        clickedImg2 = 0;
+        resetGame(evt);
     }//GEN-LAST:event_btnResetMouseClicked
 
     private void java1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_java1MouseClicked
@@ -907,7 +895,6 @@ public class Game extends javax.swing.JFrame {
         Scores showScores = new Scores(this, rootPaneCheckingEnabled);
         showScores.setVisible(true);
     }//GEN-LAST:event_ScoresMenuMouseClicked
-
     private void exitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_exitBtnActionPerformed
@@ -921,9 +908,6 @@ public class Game extends javax.swing.JFrame {
         AboutUs showAbout = new AboutUs(this, rootPaneCheckingEnabled);
         showAbout.setVisible(true);
     }//GEN-LAST:event_AboutMenuMouseClicked
-                              
- 
-    
     /**
      * @param args the command line arguments
      */
@@ -1062,8 +1046,8 @@ public class Game extends javax.swing.JFrame {
                         clickedImg2 = i;
                         //System.out.println("Click 2: " + clickedImg2);
                     }
-                }
-                
+                    
+                }    
             }
         }
     }
@@ -1076,6 +1060,9 @@ public class Game extends javax.swing.JFrame {
                         score += 100;
                         controlParejas[clickedImg1] = 1;
                         controlParejas[clickedImg2] = 1;
+                        counterPairs++;
+                        System.out.println("Pares: " + counterPairs);
+                        hasWin();
                     } else {
                         images[clickedImg1].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
                         images[clickedImg2].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
@@ -1140,6 +1127,42 @@ public class Game extends javax.swing.JFrame {
     private void saveScore() {
         Usuario usuarioGuardado = new Usuario("abc", jugador, score);
         scoreFile.escribir(usuarioGuardado);
+    }
+
+    private void hasWin() {
+        if (counterPairs >= 18) {
+            JOptionPane.showMessageDialog(null, "Felicitaciones :D");
+            saveScore();
+            initGame();
+            for (int i = 0; i < images.length; i++) {
+                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
+                //System.out.println(images[i].getIcon().toString());
+            }
+            score = 0;
+            jLabelScore.setText(score+"");
+            click = 0;
+            clickedImg1 = 0;
+            clickedImg2 = 0;
+            counterPairs = 0;
+        }
+    }
+
+    private void resetGame(java.awt.event.MouseEvent evt) {
+        if(evt.getSource() == btnReset){
+            initGame();
+            for (int i = 0; i < images.length; i++) {
+                images[i].setIcon(new ImageIcon(getClass().getResource("/vista/img/cardIcon.png")));
+                //System.out.println(images[i].getIcon().toString());
+            }
+        }
+        
+        score = 0;
+        jLabelScore.setText(score+"");
+        
+        click = 0;
+        clickedImg1 = 0;
+        clickedImg2 = 0;
+        counterPairs = 0;
     }
 
 }
